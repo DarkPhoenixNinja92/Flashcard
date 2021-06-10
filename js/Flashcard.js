@@ -15,27 +15,36 @@ const addCard = (ev) => {
 
     localStorage.setItem('myFlashCardList', JSON.stringify(flashcard))
 */
+    let cardOutDiv = document.createElement("div");
+    cardOutDiv.setAttribute("id", "qa-div");
+    document.getElementById('card-val').appendChild(cardOutDiv);
     let cardOutQuestion = document.createElement('p');
     cardOutQuestion.setAttribute("id", "question-para");
     cardOutQuestion.innerText = "Question: " + flash.question;
-    document.getElementById('card-val').appendChild(cardOutQuestion);
+    document.getElementById("qa-div").appendChild(cardOutQuestion);
 
     let cardOutAnswer = document.createElement('p');
     cardOutAnswer.setAttribute("id", "answer-para");
     cardOutAnswer.innerText = "Answer: " + flash.answer;
-    document.getElementById("card-val").appendChild(cardOutAnswer);
-    document.getElementById("card-val").style.border = "1px solid black";
-    document.getElementById("card-val").style.marginRight = "90%";
+    document.getElementById("qa-div").appendChild(cardOutAnswer);
+    document.getElementById("qa-div").style.border = "1px solid black";
+    document.getElementById("qa-div").style.marginRight = "90%";
 
     let cardOutDelete = document.createElement('button');
     cardOutDelete.setAttribute("id", "button-delete");
     cardOutDelete.innerText = "Delete Flashcard";
-    document.getElementById("card-val").appendChild(cardOutDelete);
+    document.getElementById("qa-div").appendChild(cardOutDelete);
+
     cardOutDelete.onclick = () => {
-        const cardValContent = document.getElementById("card-val");
+        let cardValContent = document.getElementById("card-val");
         cardValContent.textContent = '';
-        document.getElementById('card-val').style.border = "none";
+        document.getElementById("card-val").remove();
     }
+
+    let cardOutModify = document.createElement('button');
+    cardOutModify.setAttribute("id", "button-mod");
+    cardOutModify.innerText = "Modify Flashcard";
+    document.getElementById("qa-div").appendChild(cardOutModify);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
