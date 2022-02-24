@@ -1,0 +1,117 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    position: relative;
+    left: 32.5vw;
+    top: 3em;
+}
+
+form input,
+form textarea {
+    margin-bottom: 0.7em;
+}
+
+form input,
+form textarea,
+form button,
+form input::placeholder,
+form textarea::placeholder {
+    color: #000;
+    background-color: lightgray;
+    padding: 1em 0;
+}
+
+form textarea::placeholder {
+    position: relative;
+    bottom: 1.4em;
+    left: 0.3em;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.show {
+    display: initial;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    position: relative;
+    top: 8em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-gap: 3.7em;
+}
+
+.card-container {
+    position: relative;
+    width: 12.5rem;
+    height: 18.75rem;
+    color: #fff;
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    background: crimson;
+    border-radius: 15px;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front h2 {
+    position: relative;
+    right: 1em;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.back p {
+    position: relative;
+    left: 6em;
+    width: 45%;
+}
+
+.btn-div {
+    position: relative;
+    left: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-div button {
+    padding: 1em 2em;
+    background: orangered;
+    color: #fff;
+}
