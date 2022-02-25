@@ -5,6 +5,17 @@ const submit = document.getElementById("submit");
 const grid = document.querySelector(".grid");
 const error = document.querySelector(".error");
 
+grid.addEventListener('click', deleteCard);
+
+function deleteCard(e) {
+    if (e.target.classList[0] == "delete") {
+        const buttons = e.target.parentElement;
+        const cardBack = buttons.parentElement;
+        const theCard = cardBack.parentElement;
+        theCard.parentElement.remove();
+    }
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (question.value != "" && answer.value != "") {
