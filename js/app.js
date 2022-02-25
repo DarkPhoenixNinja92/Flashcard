@@ -14,6 +14,13 @@ function deleteCard(e) {
         const theCard = cardBack.parentElement;
         theCard.parentElement.remove();
     }
+    if (e.target.classList[1] == "fa-trash-can") {
+        const button = e.target.parentElement;
+        const buttons = button.parentElement;
+        const cardBack = buttons.parentElement;
+        const theCard = cardBack.parentElement;
+        theCard.parentElement.remove();
+    }
 }
 
 form.addEventListener('submit', (e) => {
