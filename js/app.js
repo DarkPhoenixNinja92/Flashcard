@@ -4,6 +4,8 @@ const answer = document.querySelector(".answer");
 const submit = document.getElementById("submit");
 const grid = document.querySelector(".grid");
 const error = document.querySelector(".error");
+const start = document.querySelector(".start");
+const begin = document.querySelector(".begin");
 
 grid.addEventListener('click', deleteCard);
 
