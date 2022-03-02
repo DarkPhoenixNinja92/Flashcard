@@ -8,6 +8,7 @@ const start = document.querySelector(".start");
 const begin = document.querySelector(".begin");
 
 grid.addEventListener('click', deleteCard);
+grid.addEventListener('click', editCard);
 
 function deleteCard(e) {
     if (e.target.classList[0] == "delete") {
@@ -22,6 +23,14 @@ function deleteCard(e) {
         const cardBack = buttons.parentElement;
         const theCard = cardBack.parentElement;
         theCard.parentElement.remove();
+    }
+}
+
+function editCard(e) {
+    if (e.target.classList[0] == "edit") {
+        question.value = document.querySelector(".front h2").innerText;
+        answer.value = document.querySelector(".back p").innerText;
+        submit.innerText = "Save";
     }
 }
 
@@ -62,6 +71,8 @@ form.addEventListener('submit', (e) => {
         figureBack.append(buttonDiv);
         buttonDiv.append(btnEdit);
         buttonDiv.append(btnDelete);
+        question.value = "";
+        answer.value = "";
     } else {
         error.classList.remove("hide");
         error.classList.add("show");
